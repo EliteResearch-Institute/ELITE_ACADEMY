@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Accounting Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#0f172a;color:#fff}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:rgba(15,23,42,0.9);backdrop-filter:blur(10px);position:sticky;top:0}
+nav h2{color:#D4AF37}
+nav ul{display:flex;gap:25px;list-style:none}
+nav a{color:#fff}
+.hero{height:100vh;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1400&q=80');background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px}
+.hero h1{font-size:3.5rem}
+.hero p{max-width:600px;margin:20px 0;color:#cbd5e1}
+.btn{padding:14px 30px;border-radius:40px;margin:5px;font-weight:600;cursor:pointer}
+.btn-primary{background:#D4AF37;color:#0A1F44}
+.btn-whatsapp{background:#25D366;color:#fff}
+.section{padding:80px 40px;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:40px}
+.card{background:#1e293b;padding:20px;border-radius:15px}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:10px;margin-bottom:10px}
+.video iframe{width:100%;max-width:800px;height:400px;border-radius:12px}
+.dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.dash{background:#1e293b;padding:20px;border-radius:12px}
+.progress-bar{background:#334155;height:20px;border-radius:20px}
+.progress{background:#D4AF37;height:100%;width:75%;border-radius:20px}
+.gallery img{width:100%;border-radius:12px;margin-top:20px}
+form{max-width:500px;margin:30px auto}
+input,textarea{width:100%;padding:12px;margin:10px 0;border-radius:8px;border:none}
+.cta{background:#D4AF37;color:#0A1F44;padding:60px}
+.cta a{background:#0A1F44;color:#fff;padding:12px 25px;border-radius:30px;margin:5px}
+footer{background:#020617;padding:30px;text-align:center;color:#94a3b8}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px}
+</style>
+</head>
+<body>
+
+<nav>
+<h2>Elite Academy</h2>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#courses">Courses</a></li>
+<li><a href="#dashboard">Dashboard</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<h1>Become an Accounting Expert</h1>
+<p>WAEC & JAMB success system with proven results</p>
+<a href="https://wa.me/2348165229268?text=Hi%20I%20want%20to%20enroll" class="btn btn-whatsapp">Start on WhatsApp</a>
+<a onclick="payWithPaystack()" class="btn btn-primary">Enroll Instantly</a>
+</section>
+
+<section class="section gallery">
+<h2>Our Students in Action</h2>
+<img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1000&q=80">
+<img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1000&q=80">
+</section>
+
+<section class="section" id="courses">
+<h2>Premium Courses</h2>
+<div class="grid">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=800&q=80">
+<h3>WAEC Masterclass</h3>
+<p>Complete syllabus + past questions</p>
+<button class="btn btn-primary" onclick="payWithPaystack()">Enroll</button>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1554774853-b414d2a2b9f9?auto=format&fit=crop&w=800&q=80">
+<h3>JAMB Intensive</h3>
+<p>Crash prep for high scores</p>
+<button class="btn btn-primary" onclick="payWithPaystack()">Enroll</button>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80">
+<h3>Beginner Bootcamp</h3>
+<p>From zero to pro</p>
+<button class="btn btn-primary" onclick="payWithPaystack()">Enroll</button>
+</div>
+</div>
+</section>
+
+<section class="section video">
+<h2>Watch Sample Lesson</h2>
+<iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g"></iframe>
+</section>
+
+<section class="section" id="dashboard">
+<h2>Student Dashboard</h2>
+<div class="dashboard">
+<div class="dash"><h3>Progress</h3><div class="progress-bar"><div class="progress"></div></div></div>
+<div class="dash"><h3>Completed</h3><p>15 / 20 lessons</p></div>
+<div class="dash"><h3>Next Lesson</h3><p>Final Accounts</p></div>
+</div>
+</section>
+
+<section class="section gallery">
+<h2>Success Stories</h2>
+<img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=1000&q=80">
+<img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1000&q=80">
+</section>
+
+<section class="section">
+<h2>Free Resources</h2>
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80">
+<a href="https://drive.google.com/drive/folders/YOUR_LINK" class="btn btn-primary">Download Materials</a>
+</section>
+
+<section class="section">
+<h2>Join Students</h2>
+<form>
+<input type="text" placeholder="Full Name">
+<input type="email" placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button class="btn btn-primary">Submit</button>
+</form>
+</section>
+
+<section class="cta">
+<h2>Ready to Dominate Accounting?</h2>
+<a href="https://wa.me/2348165229268?text=Hi%20I%20want%20to%20enroll">Chat Now</a>
+<a href="mailto:info.eri.ng@gmail.com">Email Us</a>
+</section>
+
+<footer id="contact">
+<p>Elite Accounting Academy</p>
+<p>08165229268 | info.eri.ng@gmail.com</p>
+<p>© 2026 All Rights Reserved</p>
+</footer>
+
+<a href="https://wa.me/2348165229268?text=Hi%20I%20want%20to%20enroll" class="whatsapp">💬</a>
+
+<script>
+function payWithPaystack(){
+var handler = PaystackPop.setup({
+key: 'YOUR_PUBLIC_KEY',
+email: 'customer@email.com',
+amount: 500000,
+currency: "NGN",
+callback: function(response){alert('Payment successful');},
+onClose: function(){alert('Transaction cancelled');}
+});
+handler.openIframe();
+}
+</script>
+
+</body>
+</html>
